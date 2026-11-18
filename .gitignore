@@ -1,0 +1,12 @@
+.env
+credentials.json
+token.json
+.tmp/
+node_modules/
+temporary screenshots/
+.DS_Store
+# Sources tierces et fichiers locaux, non publiés
+*.mp4
+*.mov
+skills/
+.claude/

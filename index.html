@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calvin — vos données réunies en un seul référentiel</title>
+  <meta name="description" content="Calvin fusionne vos outils et vos bases de données en un référentiel unique, sans perte ni ressaisie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. Chargement -->
+  <div id="loader" role="status" aria-live="polite">
+    <span class="loader-brand">Calvin</span>
+    <div class="loader-track"><div id="loader-bar"></div></div>
+    <span id="loader-percent">0 %</span>
+  </div>
+
+  <!-- 2. En-tête -->
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Calvin, retour en haut">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 22 12 9l4 6 3-4 4 11Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      Calvin
+    </a>
+    <nav aria-label="Navigation principale">
+      <a class="nav-link" href="#fusion">Fonctionnement</a>
+      <a class="nav-link" href="#resultat">Résultat</a>
+      <a class="btn btn-small" href="#demo">Demander une démo</a>
+    </nav>
+  </header>
+
+  <!-- Fond : lueur du ciel (couleur tirée de la vidéo) -->
+  <div id="sky-glow" aria-hidden="true"></div>
+
+  <!-- 4. Scène 3D -->
+  <div class="scene-wrap" aria-hidden="true"><canvas id="scene"></canvas></div>
+
+  <!-- 5. Voile sombre (chiffres) -->
+  <div id="dark-overlay" aria-hidden="true"></div>
+
+  <!-- 6. Texte défilant -->
+  <div class="marquee-wrap" data-scroll-speed="-28" aria-hidden="true">
+    <div class="marquee-text">deux sources, une seule vérité — deux sources, une seule vérité</div>
+  </div>
+
+  <main id="top">
+    <!-- 3. Accueil -->
+    <section class="hero-standalone">
+      <div class="hero-inner">
+        <p class="section-label">Plateforme de fusion de données</p>
+        <h1 class="hero-heading" aria-label="Deux systèmes. Une seule vérité.">
+          <span class="word">Deux</span> <span class="word">systèmes.</span><br>
+          <span class="word">Une</span> <span class="word">seule</span> <span class="word">vérité.</span>
+        </h1>
+        <p class="hero-tagline">Calvin réunit vos outils et vos bases de données en un référentiel unique, sans perte ni ressaisie.</p>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Faites défiler</span>
+        <svg viewBox="0 0 12 20"><path d="M6 1v17M1 13l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      </div>
+    </section>
+
+    <!-- 7. Défilement -->
+    <div id="scroll-container">
+
+      <section class="scroll-section section-content align-left"
+               data-enter="6" data-leave="22" data-animation="slide-left">
+        <div class="section-inner">
+          <p class="section-label">Avant Calvin</p>
+          <h2 class="section-heading">Vos outils ne disent pas la même chose.</h2>
+          <p class="section-body">Le CRM, l'ERP et les tableurs gardent chacun leur version du client, de la commande, de la facture. Vos équipes ressaisissent, comparent, arbitrent. Les décisions attendent.</p>
+        </div>
+      </section>
+
+      <section id="fusion" class="scroll-section section-content align-right"
+               data-enter="25" data-leave="43" data-animation="clip-reveal">
+        <div class="section-inner">
+          <p class="section-label">La fusion, en trois étapes</p>
+          <h2 class="section-heading">Calvin rapproche vos sources sans rien effacer.</h2>
+          <ol class="steps section-body">
+            <li><strong>Connecter.</strong> Vos outils sont branchés en lecture seule. Aucune donnée ne bouge.</li>
+            <li><strong>Rapprocher.</strong> Calvin repère les doublons et propose une fiche unique, que vous validez.</li>
+            <li><strong>Basculer.</strong> Vos outils lisent et écrivent dans le référentiel commun.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="scroll-section section-stats"
+               data-enter="47" data-leave="61" data-animation="stagger-up">
+        <div class="stats-grid">
+          <div class="stat">
+            <p class="stat-value"><span class="stat-number" data-value="87" data-decimals="0">0</span><span class="stat-suffix"> %</span></p>
+            <p class="stat-label">de ressaisies en moins</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value"><span class="stat-number" data-value="99.2" data-decimals="1">0</span><span class="stat-suffix"> %</span></p>
+            <p class="stat-label">des doublons détectés automatiquement</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value"><span class="stat-number" data-value="21" data-decimals="0">0</span><span class="stat-suffix"> jours</span></p>
+            <p class="stat-label">pour une première fusion en production</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultat" class="scroll-section section-content align-left"
+               data-enter="65" data-leave="80" data-animation="scale-up">
+        <div class="section-inner">
+          <p class="section-label">Après Calvin</p>
+          <h2 class="section-heading">Un seul référentiel, le même pour tous.</h2>
+          <p class="section-body">Commerciaux, comptabilité et direction lisent la même fiche, à jour. Chaque fusion est historisée : vous savez d'où vient chaque valeur, et vous pouvez revenir en arrière.</p>
+          <ul class="facts section-note">
+            <li>Hébergement en France</li>
+            <li>Conforme au RGPD</li>
+            <li>Connecteurs pour plus de 60 outils</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="demo" class="scroll-section section-content align-right section-cta"
+               data-enter="92" data-leave="100" data-animation="slide-right" data-persist="true">
+        <div class="section-inner">
+          <h2 class="section-heading">Commencez par deux de vos outils.</h2>
+          <p class="section-body">Une démonstration de 30 minutes sur vos propres données, sans engagement. Vous repartez avec la liste des doublons trouvés.</p>
+          <p class="cta-row"><a class="btn" href="mailto:demo@calvin.example?subject=Demande%20de%20d%C3%A9mo">Demander une démo</a></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Calvin est un produit fictif, créé pour cette démonstration.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
